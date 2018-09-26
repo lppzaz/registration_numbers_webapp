@@ -9,9 +9,9 @@ $ npm init --y
 $ npm install express --save
 
 ```
-# Flash Setup
+## Flash Setup
 
-## Install
+### Install
 
 ```
 npm install --save-dev express-flash
