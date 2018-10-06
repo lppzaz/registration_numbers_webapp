@@ -1,29 +1,26 @@
   
 
-  <h1>Registration number exercise</h1><br>
+  <h1>Registration WebApp</h1><br>
  
   
     
   </div>
-  <div class="rButts">
-<form action="">
-  <input type="radio" name="Location" value="Tokai"> Tokai<br>
-  <input type="radio" name="Location" value="Plumbstead"> Plumbstead<br>
-  <input type="radio" name="Location" value="Constantia"> Constantia
-</form>
-
-  </div>
-  <div class="input-box">
-    <form action="">
-    <input type="text" placeholder="Enter Reg Number" name="" id="userinput">
-    <button type="button" id="enter" name="button">ADD</button>
-    <button type="button" id="eReset" name="button">RESET</button>
+  <div>
+<form action="/reg_numbers" method="post">
+   <input type="text" placeholder="Enter Reg Number" name="registrate" id="userinput" pattern="[A-Z]{2,3}\s\d{3}\s\d{3}"><br>
+  {{!-- <input type="radio" name="Location" value="Tokai"> Tokai
+  <input type="radio" name="Location" value="Plumbstead"> Plumbstead
+  <input type="radio" name="Location" value="Constantia"> Constantia --}}    
+      <button class="submitBtn">ADD</button>
     </form>
 
   </div>
 
   <div class=regnumber>
     <ul>
+      {{#each reg_numbers}}
+      <li>{{reg_number}}</li>
+      {{/each}}
     </ul>
   </div>
   

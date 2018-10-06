@@ -7,15 +7,17 @@ const PORT = process.env.PORT || 3100;
 const pg = require('pg');
 var bodyParser = require('body-parser');
 
+const Registrations = require('./regLogic');
+
 app.use(express.static('public'));
 app.engine('handlebars', exphbs({
-    defaultLayout: 'main'
+   defaultLayout: 'main'
 }));
 
 app.use(session({
-    secret: '<add a secret string here>',
-    resave: false,
-    saveUninitialized: true
+   secret: '<add a secret string here>',
+   resave: false,
+   saveUninitialized: true
 }));
 
 // initialise the flash middleware
@@ -26,42 +28,58 @@ app.use(flash());
 const Pool = pg.Pool;
 let useSSL = false;
 if (process.env.DATABASE_URL) {
-    useSSL = true;
+   useSSL = true;
 }
-const connectionString = process.env.DATABASE_URL || 'postresql://cobus:cobus123@localhost:5432/greetings';
+const connectionString = process.env.DATABASE_URL || 'postresql://cobus:cobus123@localhost:5432/registrations';
 
 // triggering database request actions(open connection to db)
 
 const pool = new Pool({
-    connectionString,
-    ssl: useSSL
+   connectionString,
+   ssl: useSSL
 });
 app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({
-    extended: false
+   extended: false
 }));
-app.get('/', function (req, res) {
-    res.render('home');
+app.use(bodyParser.json());
+
+const registrations = Registrations(pool);
+
+app.get('/', async function (req, res) {
+   res.render('home');
 });
 
-//logic section
+app.post('/reg_numbers', async function (req, res) {
+   let reg = req.body.registrate;
+   await registrations.addReg(reg);
+   res.render('home', {
+      reg_numbers: await registrations.getRegs()
+   });
+});
+
+app.get('/reg_numbers', async function (req, res) {
+   res.render('home', {
+      reg_numbers: await registrations.getRegs()
+   });
+});
+
+// logic section
 
 // let RegLogic = require ("./regLogic")
 
-//logic+database
+// logic+database
 
-//const regLog = regLogic(pool);
+// const regLog = regLogic(pool);
 
-//file between logic and index route:
+// file between logic and index route:
 
 // const regRoutes = require("/regRoutesFile");
 
-//what marries up routes + logic that takes in database
+// what marries up routes + logic that takes in database
 
-//const RegFactory = regRoutes(regLog);
+// const RegFactory = regRoutes(regLog);
 
-
-app.use(bodyParser.json());
 app.listen(PORT, function () {
-    console.log('INITIATING LAUNCH SEQUENCE IN 3,2,1 ON LOCAL PORT', PORT);
+   console.log('INITIATING LAUNCH SEQUENCE IN 3,2,1 ON LOCAL PORT', PORT);
 });

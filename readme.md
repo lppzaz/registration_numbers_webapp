@@ -9,13 +9,15 @@ $ npm init --y
 $ npm install express --save
 
 ```
+# Create postgres Database
+sudo -u postgres createdb registrations
 ## Flash Setup
 
 ### Install
 
 ```
-npm install --save-dev express-flash
-npm install --save-dev express-session
+npm install --save express-flash
+npm install --save express-session
 ```
 # nodemon Setup
 
