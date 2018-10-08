@@ -13,7 +13,7 @@
    text-shadow:0 0 5px black;
    box-shadow:0 0 5px black;
    text-shadow:2px 2px 4px #000000;
-   font-size: 300%;
+   font-size: 100px;
   width: fit-content;
   margin: auto;
    
@@ -53,16 +53,17 @@ text-align: center;
  }
  input{
    margin-bottom: 15px;
-   height: 25px;
+   height: 35px;
    width: 300px;
    text-transform: uppercase;
  }
  
 
  .resetBtn{
-  position: relative;
+  position: absolute;
   width: 100px;
   height: 60px;
+  margin-left: 620px;
   text-align: center;
   line-height: 60px;
   color: #fff;
@@ -137,9 +138,15 @@ text-align: center;
  @media only screen and (max-width: 750px) {
  
  h1{
-   font-size: 1.2rem;
+   font-size: 25px;
  }
- form {
-   font-size: 1rem;
+ li{
+   font-size: 25px;
  }
+ .resetBtn{
+  margin-left: auto; 
+  width: auto;
+  height:auto;
+  background-size: auto;
  }
+};

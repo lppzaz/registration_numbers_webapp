@@ -13,7 +13,6 @@ module.exports = function (pool) {
          reg = reg.toUpperCase();
          // CA 123 123
          let townTag = reg.substring(0, 3).trim();
-
          let foundTown = await pool.query('select id from towns where town_tag=$1 limit 1', [townTag]);
          if (foundTown.rowCount === 0) {
             return 'Invalid town';
