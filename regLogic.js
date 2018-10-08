@@ -3,10 +3,13 @@ module.exports = function (pool) {
       let regs = await pool.query('select * from reg_numbers');
       return regs.rows;
    }
+   async function clear () {
+      const reset = await pool.query('delete from reg_numbers');
+      return reset.rows;
+   }
 
    async function addReg (reg) {
-
-      if (reg && reg !== '' ) {
+      if (reg && reg !== '') {
          reg = reg.toUpperCase();
          // CA 123 123
          let townTag = reg.substring(0, 3).trim();
@@ -24,6 +27,7 @@ module.exports = function (pool) {
 
    return {
       getRegs,
-      addReg
+      addReg,
+      clear
    };
 };

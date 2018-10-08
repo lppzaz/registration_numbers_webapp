@@ -64,21 +64,12 @@ app.get('/reg_numbers', async function (req, res) {
    });
 });
 
-// logic section
+// reset route
 
-// let RegLogic = require ("./regLogic")
-
-// logic+database
-
-// const regLog = regLogic(pool);
-
-// file between logic and index route:
-
-// const regRoutes = require("/regRoutesFile");
-
-// what marries up routes + logic that takes in database
-
-// const RegFactory = regRoutes(regLog);
+app.get('/reset', async function (req, res) {
+   await registrations.clear();
+   res.redirect('/');
+});
 
 app.listen(PORT, function () {
    console.log('INITIATING LAUNCH SEQUENCE IN 3,2,1 ON LOCAL PORT', PORT);

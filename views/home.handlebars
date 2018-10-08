@@ -7,13 +7,16 @@
   </div>
   <div>
 <form action="/reg_numbers" method="post">
-   <input type="text" placeholder="Enter Reg Number" name="registrate" id="userinput" pattern="[A-Z]{2,3}\s\d{3}\s\d{3}">
+   <input type="text" placeholder="Enter Reg Number" name="registrate" id="userinput" > 
+   
+   {{!-- pattern="[A-Z]{2}\s\d{3}\s\d{3}" --}}
+
    <br>
-  {{!-- <input type="radio" name="Location" value="Tokai"> Tokai
-  <input type="radio" name="Location" value="Plumbstead"> Plumbstead
-  <input type="radio" name="Location" value="Constantia"> Constantia --}}    
+    
       <button class="submitBtn">ADD</button>
     </form>
+
+<button class="button-primary resetBtn" name="button" onclick="reset()">Reset</button>
 
   </div>
 
