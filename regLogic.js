@@ -7,7 +7,7 @@ module.exports = function (pool) {
       const reset = await pool.query('delete from reg_numbers');
       return reset.rows;
    }
-
+   // inputLength() > 6 && event.keyCode === 13  -> way to limit length of reg?
    async function addReg (reg) {
       if (reg && reg !== '') {
          reg = reg.toUpperCase();
