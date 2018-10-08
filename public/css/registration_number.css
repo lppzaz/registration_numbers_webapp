@@ -42,10 +42,10 @@ text-align: center;
    border: 1px solid black;
    background-color: yellow;
    border-radius: 5px;
-   width: auto;
-   height:auto;
+   width: 400px;
+   height:88px;
    font-size: 75px;
-   margin:0px 10px 12px 15px;
+   margin:5px;
    box-shadow: 2px 2px;
    color: #000;
    text-transform: uppercase;
@@ -142,11 +142,14 @@ text-align: center;
  }
  li{
    font-size: 25px;
+   width: auto;
+   height: auto;
  }
  .resetBtn{
-  margin-left: auto; 
+  
   width: auto;
   height:auto;
   background-size: auto;
+  margin-left: 425px;
  }
 };
