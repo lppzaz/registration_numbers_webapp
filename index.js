@@ -52,7 +52,9 @@ app.get('/', async function (req, res) {
 
 app.post('/reg_numbers', async function (req, res) {
    let reg = req.body.registrate;
-   await registrations.addReg(reg);
+   
+   req.flash('noReg', await registrations.addReg(reg));
+   
    res.render('home', {
       reg_numbers: await registrations.getRegs()
    });

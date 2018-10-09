@@ -41,6 +41,7 @@ const flash = require('express-flash');
 const session = require('express-session');
 const express = require('express');
 const app = express();
+const exphbs = require('express-handlebars');
 var bodyParser = require('body-parser');
 app.use(express.static('public'));
   ```

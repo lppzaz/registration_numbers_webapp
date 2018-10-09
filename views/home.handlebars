@@ -5,6 +5,11 @@
   
     
   </div>
+  {{#if messages.noReg}}
+  <div class='Reg'>
+    {{messages.noReg}}
+  </div>
+  {{/if}}
   <div>
 <form action="/reg_numbers" method="post">
    <input type="text" placeholder="Enter Reg Number" name="registrate" id="userinput" > 

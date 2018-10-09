@@ -4,7 +4,10 @@
  body{
   background: linear-gradient(90deg, #030303, #2c0f70, #2c0f70, #030303);
  }
- 
+ .Reg{
+   color: crimson;
+   font-size: 35px;
+ }
  h1{
   margin-top: 100px;
    text-align: center;
