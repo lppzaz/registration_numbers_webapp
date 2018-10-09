@@ -12,7 +12,7 @@
   {{/if}}
   <div>
 <form action="/reg_numbers" method="post">
-   <input type="text" placeholder="Enter Reg Number" name="registrate" id="userinput" > 
+   <input type="text" placeholder="Enter Reg Number" name="registrate" id="userinput" pattern="[A-Za-z]{2,3}\s\d{3}\s\d{3}" > 
 
     <button class="submitBtn">ADD</button>
     </form>

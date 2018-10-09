@@ -20,7 +20,7 @@ module.exports = function (pool) {
          }
 
          await pool.query('insert into reg_numbers(reg_number, town) values ($1, $2)', [reg, foundTown.rows[0].id]);
-         return 'registration added successfully!';
+         return 'Registration added successfully!';
       }
       return 'Please Enter A Registration!!!';
    }
