@@ -1,28 +1,35 @@
   
 
   <h1>Registration WebApp</h1><br>
- 
-  
-    
-  </div>
-  {{#if messages.noReg}}
+  <div class="row">
+ {{#if messages.noReg}}
   <div class='Reg'>
     {{messages.noReg}}
   </div>
   {{/if}}
-  <div>
+</div>
+ <div class="row">
 <form action="/reg_numbers" method="post">
-Please Enter Regestration Number In Format Shown Below:<br>
+<p>Please Enter Regestration Number In Format Shown Below:</p>
    <input type="text" placeholder="CY 234 123" name="registrate" id="userinput" pattern="[A-Za-z]{2,3}\s\d{3}\s\d{3}" > 
+   <button class="submitBtn">ADD</button><br>
+   </form>
 
-    <button class="submitBtn">ADD</button>
-    </form>
+</div>
+<div class="row">
+  <p>Filter Towns by selecting which Town you want to display:</p><br>
+<select name="Towns" class="dropdown">
+  <option value="">Select Town</option>
+  <option value="ALL">All Towns</option>
+  <option value="CA">Cape Town</option>
+  <option value="CJ">Paarl</option>
+  <option value="CY">Bellville</option>
+  <option value="CF">Strand</option>
+</select>
 <button class="button-primary resetBtn" name="button" onclick="reset()">Reset</button>
+</div>
 
-
-  </div><br><br><br>
-
-  <div class=regnumber>
+<div class=regnumber>
     <ul>
       {{#each reg_numbers}}
       <li>{{reg_number}}</li>

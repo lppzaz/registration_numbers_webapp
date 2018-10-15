@@ -52,9 +52,8 @@ app.get('/', async function (req, res) {
 
 app.post('/reg_numbers', async function (req, res) {
    let reg = req.body.registrate;
-   
+
    req.flash('noReg', await registrations.addReg(reg));
-   
    res.render('home', {
       reg_numbers: await registrations.getRegs()
    });
@@ -71,6 +70,14 @@ app.get('/reg_numbers', async function (req, res) {
 app.get('/reset', async function (req, res) {
    await registrations.clear();
    res.redirect('/');
+});
+
+app.get('/:town_tag', async function (req, res) {
+   let town = req.params.town_tag;
+
+   res.render('home', {
+      reg_numbers: await registrations.filterTown(town)
+   });
 });
 
 app.listen(PORT, function () {

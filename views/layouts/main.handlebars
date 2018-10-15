@@ -10,12 +10,22 @@
   <link rel="stylesheet" href="/css/registration_number.css">
   <link href="https://fonts.googleapis.com/css?family=Racing+Sans+One" rel="stylesheet">
 </head>
-
 <body>
  {{{body}}}
  <script>
    function reset(){
     location.href = '/reset';
   }
+
+ let dropdown = document.querySelector('.dropdown');
+   let town = dropdown.value;
+ dropdown.addEventListener('change', function(){
+   town = dropdown.value;
+   location.href = '/' + town;
+ });
+
+  window.addEventListener('load', function(){
+    dropdown.value = town;
+  });
  </script>
  </body>
