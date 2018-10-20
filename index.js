@@ -52,9 +52,10 @@ app.get('/', async function (req, res) {
 
 app.post('/reg_numbers', async function (req, res) {
    let reg = req.body.registrate;
-
-   req.flash('noReg', await registrations.addReg(reg));
+   let result = await registrations.addReg(reg);
+   req.flash('noReg', result.message);
    res.render('home', {
+      status: result.status,
       reg_numbers: await registrations.getRegs()
    });
 });
@@ -82,4 +83,5 @@ app.get('/:town_tag', async function (req, res) {
 
 app.listen(PORT, function () {
    console.log('INITIATING LAUNCH SEQUENCE IN 3,2,1 ON LOCAL PORT', PORT);
-});
+})
+;

@@ -5,9 +5,15 @@
   background: linear-gradient(90deg, #030303, #2c0f70, #2c0f70, #030303);
  }
  .Reg{
-   color: rgb(220, 133, 20);
    font-size: 35px;
  }
+ .success {
+   color: green;
+ }
+ .error {
+   color: red;
+ }
+
  p{
    font-size:  18px;
    color: #fff;
