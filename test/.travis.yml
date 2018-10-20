@@ -1,4 +1,7 @@
-nodejs: '8.12.0'
+language: node_js
+
+node_js: 
+  - '8.12.0'
 
 env: 
   - DATABASE_URL=postresql://postgres@localhost:5432/registrations
