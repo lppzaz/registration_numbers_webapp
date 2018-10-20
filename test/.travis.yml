@@ -7,5 +7,5 @@ env:
   - DATABASE_URL=postresql://postgres@localhost:5432/registrations
 
 before_script:
-  - psql -c -U postgres'create databse registrations;' 
+  - psql -c -U postgres 'create databse registrations;' 
   - psql -U postgres -d registrations -a -f tables.sql
