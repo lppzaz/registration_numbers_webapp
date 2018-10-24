@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lppzaz/registration_numbers_webapp.svg?branch=master)](https://travis-ci.org/lppzaz/registration_numbers_webapp)
+
 # ExpressJS Setup
 
 ## Install

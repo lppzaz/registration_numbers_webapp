@@ -1,5 +1,6 @@
 module.exports = function (pool) {
-   async function getRegs () {
+   
+    async function getRegs () {
       let regs = await pool.query('select * from reg_numbers');
       return regs.rows;
    }
