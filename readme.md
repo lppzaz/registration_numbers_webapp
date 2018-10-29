@@ -20,6 +20,7 @@ sudo -u postgres createdb registrations
 ```
 npm install --save express-flash
 npm install --save express-session
+npm install express-handlebars
 ```
 # nodemon Setup
 
